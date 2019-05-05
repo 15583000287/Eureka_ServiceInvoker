@@ -1,12 +1,18 @@
+server:
+  port: 8083
 spring:
   application:
 #    配置应用名称，该服务将会被注册到端口为8761的Eureka服务器
-    name: service-provider
+    name: service-provider1
 
 eureka:
   instance:
-#    配置该服务实例的主机名称
+    #配置该服务实例的主机名称
     hostname: localhost
+    #写定IP
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://139.196.94.253:8761/eureka/
+

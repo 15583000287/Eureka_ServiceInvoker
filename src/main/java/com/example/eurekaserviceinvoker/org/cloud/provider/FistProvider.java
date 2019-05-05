@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 public class FistProvider {
     @RequestMapping("/hello")
     public String hello(HttpServletRequest request){
-        System.out.println("["+request.getRequestURI()+"]服务被调用！");
-        return  "Hello World!";
+        System.out.println("["+request.getRequestURL()+"]服务被调用！");
+        return  "Hello World   1!";
     }
 
     @RequestMapping("/sayBye")
